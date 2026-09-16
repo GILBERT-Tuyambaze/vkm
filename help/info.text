@@ -1,0 +1,1856 @@
+# VIKM GROUP LTD — MASTER AI KNOWLEDGE BASE
+
+DOCUMENT_TYPE: Company Knowledge Base
+PURPOSE: Retrieval-Augmented Generation (RAG), semantic search, embeddings, chatbot responses, website assistant, customer inquiry handling
+COMPANY: VIKM GROUP Ltd
+COUNTRY: Rwanda
+CITY: Kigali
+LOCATION: Kimironko, Gasabo District, Kigali, Rwanda
+PHONE_1: 0794399892
+PHONE_2: 0783156702
+EMAIL: [sandrinetech97@gmail.com](mailto:sandrinetech97@gmail.com)
+
+---
+
+# 00. AI RESPONSE INSTRUCTIONS
+
+## 00.1 Core Identity
+
+VIKM GROUP Ltd is a multidisciplinary company based in Kigali, Rwanda.
+
+The company provides solutions across:
+
+1. Construction
+2. Architecture
+3. Interior Design
+4. Furniture
+5. Custom Furniture
+6. Renovation and Remodeling
+7. Home Equipment and Fittings
+8. Branding
+9. Graphic Design
+10. Printing Coordination
+11. Packaging
+12. Software Development
+13. Digital Solutions
+
+The company combines practical technical work, design, creative services, project coordination, and customized solutions.
+
+---
+
+## 00.2 What the AI Assistant Should Do
+
+The chatbot should help customers:
+
+* understand what VIKM GROUP Ltd offers
+* identify the appropriate service
+* understand starting prices when officially available
+* request quotations
+* understand the project process
+* ask about furniture
+* ask about construction
+* ask about architecture
+* ask about interior and exterior design
+* ask about renovation
+* ask about branding and packaging
+* ask about websites and software
+* obtain company contact information
+* understand what information is required for a quotation
+* determine whether a project requires a customized quotation
+
+---
+
+## 00.3 Accuracy Rules
+
+The chatbot MUST NOT invent:
+
+* prices that are not provided in the knowledge base
+* completed projects that are not documented
+* customer testimonials
+* certifications
+* licenses
+* awards
+* memberships
+* partnerships
+* social-media accounts
+* addresses other than the documented company location
+* guarantees
+* delivery times
+* material specifications not documented here
+* project costs for customized work unless officially quoted
+
+If a price is marked "From", it is a STARTING PRICE and NOT a final quotation.
+
+Final pricing depends on factors such as:
+
+* scope
+* complexity
+* features
+* materials
+* quantity
+* size
+* content
+* project requirements
+* delivery time
+* production requirements
+
+For customized projects, the chatbot should direct the customer toward requesting a quotation.
+
+---
+
+# 01. COMPANY PROFILE
+
+## 01.1 Official Company Name
+
+VIKM GROUP Ltd
+
+---
+
+## 01.2 Company Description
+
+VIKM GROUP Ltd is a multidisciplinary construction, architecture, furniture, interior design, and home-solutions company based in Kigali, Rwanda.
+
+The company provides complete solutions for building, improving, furnishing, and equipping residential and commercial spaces.
+
+Its services include:
+
+* construction
+* renovation
+* architectural design
+* interior design
+* exterior design
+* custom furniture
+* furniture production
+* furniture installation
+* home equipment
+* fittings
+* branding
+* printing coordination
+* packaging
+* technology
+* software development
+* digital solutions
+
+The company focuses on combining quality workmanship, practical solutions, modern design, and professional project execution.
+
+The company aims to transform client ideas and spaces into comfortable, functional, and attractive environments.
+
+VIKM GROUP Ltd also has capabilities in technology, software development, digital solutions, branding, and graphic design, allowing it to provide complementary digital and creative services.
+
+---
+
+# 02. COMPANY LOCATION AND CONTACT
+
+COMPANY:
+VIKM GROUP Ltd
+
+LOCATION:
+Kimironko, Gasabo District, Kigali, Rwanda
+
+PHONE:
+0794399892
+
+ALTERNATIVE PHONE:
+0783156702
+
+EMAIL:
+[sandrinetech97@gmail.com](mailto:sandrinetech97@gmail.com)
+
+---
+
+# 03. SERVICE CATEGORIES
+
+VIKM GROUP Ltd's service ecosystem includes:
+
+CATEGORY_01 = Construction
+CATEGORY_02 = Architecture
+CATEGORY_03 = Interior Design
+CATEGORY_04 = Exterior Design
+CATEGORY_05 = Furniture
+CATEGORY_06 = Custom Furniture
+CATEGORY_07 = Renovation & Remodeling
+CATEGORY_08 = Home Equipment & Fittings
+CATEGORY_09 = Branding
+CATEGORY_10 = Graphic Design
+CATEGORY_11 = Printing Coordination
+CATEGORY_12 = Packaging
+CATEGORY_13 = Software & Digital Solutions
+
+---
+
+# 04. CONSTRUCTION
+
+## 04.1 Construction Overview
+
+VIKM GROUP Ltd provides construction and renovation solutions for residential and commercial projects.
+
+Construction services can include:
+
+* building construction
+* renovation
+* structural planning
+* architectural planning
+* finishing works
+* interior improvements
+* exterior improvements
+* coordination of specialists
+* project execution
+* final delivery
+
+The company can work with clients from the initial idea and design stage through construction, finishing, and final delivery.
+
+The stated focus is:
+
+* quality
+* functionality
+* durability
+* professional execution
+
+---
+
+## 04.2 Construction Project Types
+
+VIKM GROUP Ltd handles or targets projects including:
+
+* residential houses
+* apartments
+* commercial buildings
+* offices
+* shops
+* restaurants
+* hotels
+* schools
+* churches
+* renovations
+* extensions
+* interior finishing
+* exterior finishing
+
+---
+
+## 04.3 Construction Customer Examples
+
+Potential construction customers include:
+
+* individuals building homes
+* homeowners
+* property developers
+* real-estate companies
+* businesses
+* offices
+* hotels
+* restaurants
+* schools
+* churches
+* government institutions
+* other organizations
+
+---
+
+# 05. ARCHITECTURE
+
+## 05.1 Architecture Services
+
+Architecture and design services include:
+
+* architectural design
+* 2D floor plans
+* 3D architectural design
+* ArchiCAD
+* 3D models
+* exterior visualization
+* interior visualization
+* architectural modifications
+* architectural redesign
+* building concept design
+
+---
+
+## 05.2 Architecture Price Guide
+
+HOUSE / BUILDING CONCEPT DESIGN:
+Starting from 100,000 RWF
+
+2D FLOOR PLAN:
+Starting from 70,000 RWF
+
+3D ARCHICAD MODEL:
+Starting from 150,000 RWF
+
+3D EXTERIOR / INTERIOR VISUALIZATION:
+Starting from 100,000 RWF
+
+ARCHITECTURAL MODIFICATION / REDESIGN:
+Starting from 70,000 RWF
+
+IMPORTANT:
+These are starting prices. They are not necessarily final quotations.
+
+Final architecture pricing depends on the project scope, complexity, requirements, and other relevant factors.
+
+---
+
+# 06. INTERIOR DESIGN
+
+## 06.1 Interior Design Services
+
+VIKM GROUP Ltd provides interior design and interior improvement solutions.
+
+Services may involve:
+
+* interior design
+* interior visualization
+* interior finishing
+* furniture integration
+* fitted furniture
+* kitchen design
+* cabinet design
+* wardrobes
+* storage solutions
+* space improvement
+* home-equipment integration
+
+The company emphasizes functional, attractive, modern, and practical spaces.
+
+---
+
+# 07. EXTERIOR DESIGN
+
+Exterior-related services include:
+
+* exterior design
+* exterior visualization
+* exterior finishing
+* architectural visualization
+* building improvements
+* renovation-related exterior work
+
+A customer requesting an exterior concept, visualization, or modification may need to provide project dimensions, drawings, photographs, or other project information before a final quotation can be determined.
+
+---
+
+# 08. FURNITURE
+
+## 08.1 Furniture Overview
+
+VIKM GROUP Ltd provides customized furniture solutions designed according to:
+
+* client's available space
+* requirements
+* preferred style
+* budget
+* functionality
+* intended use
+
+Furniture services can include:
+
+* design
+* production
+* installation
+
+The company focuses on furniture that combines:
+
+* functionality
+* durability
+* space efficiency
+* modern design
+
+---
+
+## 08.2 Furniture Products
+
+Furniture offered or supported includes:
+
+* sofas
+* beds
+* dining tables
+* dining chairs
+* wardrobes
+* kitchen cabinets
+* TV units
+* office desks
+* office chairs
+* reception furniture
+* shelves
+* outdoor furniture
+* custom furniture
+* hotel furniture
+* restaurant furniture
+
+---
+
+## 08.3 Custom Furniture
+
+Custom furniture can include:
+
+* kitchen cabinets
+* fitted kitchens
+* wardrobes
+* closets
+* TV units
+* entertainment units
+* office furniture
+* tables
+* desks
+* shelves
+* storage units
+* bedroom furniture
+* customized household furniture
+* made-to-measure furniture
+* furniture fittings
+
+For custom furniture, the customer should provide as much information as possible about:
+
+* dimensions
+* available space
+* preferred design
+* material preference
+* quantity
+* intended use
+* budget
+* location
+* photographs or drawings where applicable
+
+Final pricing should be quoted according to the actual project requirements.
+
+---
+
+# 09. FURNITURE MATERIALS
+
+Materials identified in the company questionnaire include:
+
+* solid wood
+* MDF
+* plywood
+* melamine
+* laminate
+* metal
+* glass
+* upholstery/fabric
+* leather
+
+The chatbot should not claim that a particular furniture item is always manufactured using a specific material unless the customer or company has specified that material for that particular project.
+
+---
+
+# 10. KITCHENS AND CABINETS
+
+VIKM GROUP Ltd provides:
+
+* kitchen cabinets
+* fitted kitchens
+* kitchen design
+* customized kitchen furniture
+* storage solutions
+* made-to-measure fittings
+
+Customers interested in kitchen furniture should ideally provide:
+
+* kitchen dimensions
+* photographs
+* layout or floor plan if available
+* preferred style
+* material preference
+* color preference
+* storage requirements
+* appliances to be accommodated
+* approximate budget
+
+---
+
+# 11. WARDROBES AND STORAGE
+
+Services include:
+
+* wardrobes
+* closets
+* storage units
+* shelves
+* custom storage
+* made-to-measure furniture
+
+The design should consider:
+
+* available space
+* storage needs
+* dimensions
+* preferred appearance
+* material
+* functionality
+
+---
+
+# 12. OFFICE AND COMMERCIAL FURNITURE
+
+Furniture solutions include:
+
+* office desks
+* office chairs
+* reception furniture
+* tables
+* shelves
+* storage units
+* customized commercial furniture
+
+The company also targets:
+
+* offices
+* businesses
+* hotels
+* restaurants
+* commercial spaces
+
+---
+
+# 13. HOTEL AND RESTAURANT FURNITURE
+
+VIKM GROUP Ltd lists:
+
+* hotel furniture
+* restaurant furniture
+* dining tables
+* dining chairs
+* reception furniture
+* custom furniture
+
+Commercial furniture projects may require quotation based on:
+
+* quantity
+* dimensions
+* material
+* design
+* finishing
+* installation
+* project location
+* production requirements
+
+---
+
+# 14. RENOVATION AND REMODELING
+
+Renovation services can include:
+
+* residential renovation
+* commercial renovation
+* extensions
+* interior finishing
+* exterior finishing
+* building improvements
+* redesign
+* transformation projects
+
+VIKM GROUP Ltd can work from assessment and planning through design, execution, quality checking, and delivery.
+
+---
+
+# 15. COMPLETE HOME SOLUTIONS
+
+VIKM GROUP Ltd positions itself as a company capable of coordinating multiple parts of a building or home project.
+
+A customer may potentially work with the company across:
+
+1. Concept
+2. Architecture
+3. Construction
+4. Interior design
+5. Furniture
+6. Fitted kitchens
+7. Wardrobes
+8. Home equipment
+9. Finishing
+10. Installation
+11. Final delivery
+
+The company describes its value as bringing several complementary services together under one company.
+
+---
+
+# 16. HOME EQUIPMENT AND FITTINGS
+
+The company describes capabilities related to:
+
+* home equipment
+* fittings
+* furniture fittings
+* installation
+* complete functional spaces
+
+The chatbot should ask the customer what specific equipment or fitting they need before giving a specific answer if the item is not explicitly documented.
+
+---
+
+# 17. SOFTWARE AND DIGITAL SOLUTIONS
+
+## 17.1 Software Services
+
+VIKM GROUP Ltd provides software and digital services including:
+
+* websites
+* web applications
+* mobile applications
+* business systems
+* databases
+* APIs
+* system integrations
+* maintenance
+* digital documents
+* digital seals
+* digital stamps
+* digital signatures
+* document workflows
+* UI/UX design
+* responsive design
+* troubleshooting
+* website redesign
+
+---
+
+# 18. SOFTWARE PRICE GUIDE
+
+BUSINESS / INFORMATIONAL WEBSITE:
+From 150,000 RWF
+
+PROFESSIONAL WEBSITE + ADMIN FEATURES:
+From 250,000 RWF
+
+WEBSITE REDESIGN / PROFESSIONAL UPGRADE:
+From 80,000 RWF
+
+WEBSITE FIXES & TROUBLESHOOTING:
+From 30,000 RWF
+
+MOBILE APPLICATION DEVELOPMENT:
+From 300,000 RWF
+
+CUSTOM WEB APPLICATION / BUSINESS SYSTEM:
+From 300,000 RWF
+
+DATABASE DESIGN / INTEGRATION:
+From 80,000 RWF
+
+API / SYSTEM INTEGRATION:
+From 80,000 RWF
+
+DIGITAL SEAL / DIGITAL STAMP:
+From 25,000 RWF
+
+DIGITAL SIGNATURE / DOCUMENT WORKFLOW:
+From 50,000 RWF
+
+SOFTWARE MAINTENANCE & UPDATES:
+From 30,000 RWF
+
+UI/UX & RESPONSIVE DESIGN:
+From 50,000 RWF
+
+PRICE RULE:
+"From" prices are starting rates.
+
+FINAL PRICE DEPENDS ON:
+
+* scope
+* complexity
+* features
+* content
+* delivery time
+* technical requirements
+
+---
+
+# 19. WEBSITE SERVICES
+
+Website-related services include:
+
+* informational websites
+* professional business websites
+* websites with administration features
+* website redesign
+* professional upgrades
+* responsive layouts
+* UI/UX
+* website troubleshooting
+* maintenance
+
+A customer requesting a website should ideally specify:
+
+* business type
+* purpose of website
+* required pages
+* required features
+* whether an admin dashboard is needed
+* whether online payments are needed
+* whether customer accounts are needed
+* content availability
+* preferred timeline
+* budget
+
+---
+
+# 20. MOBILE APPLICATIONS
+
+VIKM GROUP Ltd offers mobile application development.
+
+STARTING PRICE:
+From 300,000 RWF.
+
+Final mobile application pricing depends on:
+
+* features
+* complexity
+* number of screens
+* backend requirements
+* database requirements
+* integrations
+* authentication
+* deployment requirements
+* project scope
+
+The chatbot should request project details before providing a final price.
+
+---
+
+# 21. CUSTOM BUSINESS SYSTEMS
+
+VIKM GROUP Ltd offers custom web applications and business systems starting from 300,000 RWF.
+
+Potential components may include:
+
+* databases
+* APIs
+* dashboards
+* user management
+* business workflows
+* digital documents
+* custom interfaces
+
+The chatbot should not promise a specific feature unless it has been confirmed with the customer.
+
+---
+
+# 22. DATABASES AND APIs
+
+DATABASE DESIGN / INTEGRATION:
+From 80,000 RWF
+
+API / SYSTEM INTEGRATION:
+From 80,000 RWF
+
+These are starting prices.
+
+Actual cost depends on:
+
+* number of systems
+* data requirements
+* integration complexity
+* security requirements
+* authentication
+* existing infrastructure
+* required functionality
+
+---
+
+# 23. DIGITAL DOCUMENT SOLUTIONS
+
+Services include:
+
+* digital seals
+* digital stamps
+* digital signatures
+* document workflows
+* digital document solutions
+
+DIGITAL SEAL / STAMP:
+From 25,000 RWF
+
+DIGITAL SIGNATURE / DOCUMENT WORKFLOW:
+From 50,000 RWF
+
+---
+
+# 24. WEBSITE FIXES AND MAINTENANCE
+
+WEBSITE FIXES / TROUBLESHOOTING:
+From 30,000 RWF
+
+SOFTWARE MAINTENANCE / UPDATES:
+From 30,000 RWF
+
+WEBSITE REDESIGN / PROFESSIONAL UPGRADE:
+From 80,000 RWF
+
+The final price depends on the problem, scope, and complexity.
+
+---
+
+# 25. BRANDING
+
+VIKM GROUP Ltd provides professional branding and graphic-design services.
+
+Branding services include:
+
+* logo design
+* logo redesign
+* business card design
+* flyer design
+* poster design
+* label design
+* sticker design
+* digital seal design
+* stamp design
+* packaging design
+* branded paper bags
+* custom packaging concepts
+* print-ready artwork
+
+---
+
+# 26. BRANDING PRICE GUIDE
+
+LOGO DESIGN / REDESIGN:
+From 30,000 RWF
+
+BUSINESS CARD DESIGN:
+From 15,000 RWF
+
+FLYER / POSTER DESIGN:
+From 15,000 RWF
+
+LABEL / STICKER DESIGN:
+From 15,000 RWF
+
+DIGITAL SEAL / STAMP DESIGN:
+From 25,000 RWF
+
+BRANDED PAPER BAG / PACKAGING DESIGN:
+From 25,000 RWF
+
+CUSTOM PRINTING COORDINATION:
+Quotation based on quantity
+
+CUSTOM BREAD BAG PRODUCTION:
+Quotation based on size, quantity, and printing
+
+---
+
+# 27. PACKAGING
+
+Packaging services include:
+
+* packaging design
+* branded packaging
+* paper bags
+* bread bags
+* labels
+* stickers
+* print-ready artwork
+* printing coordination
+* production coordination
+* sample/prototype review
+
+For packaging projects, VIKM GROUP Ltd works with clients to understand:
+
+* product
+* branding
+* packaging requirements
+* size
+* intended use
+
+The company can then prepare the design and coordinate with suitable production partners when manufacturing or printing is required.
+
+---
+
+# 28. BREAD BAG PACKAGING
+
+A documented packaging quotation exists for Favorie Bakery.
+
+CUSTOM PRINTED PAPER BREAD BAGS:
+
+MEDIUM BREAD BAG:
+Plain bag = 65,000 RWF/carton
+Logo/printing = +25,000 RWF
+Quoted price = 90,000 RWF/carton
+
+BIG BREAD BAG:
+Plain bag = 68,000 RWF/carton
+Logo/printing = +25,000 RWF
+Quoted price = 93,000 RWF/carton
+
+QUANTITY:
+1 bundle = 1,000 pieces.
+
+ESTIMATED USAGE:
+At approximately 140–150 bags per day, 1,000 pieces can cover roughly one week.
+
+IMPORTANT:
+Production details and pricing should be confirmed with the manufacturer according to:
+
+* selected size
+* paper specification
+* printing
+* finishing
+
+This quotation should NOT automatically be presented as a universal bread-bag price for every customer.
+
+---
+
+# 29. PRINTING COORDINATION
+
+VIKM GROUP Ltd coordinates custom printing when required.
+
+Printing coordination can involve:
+
+* artwork preparation
+* print-ready files
+* manufacturer coordination
+* printing
+* cutting
+* folding
+* finishing
+* sample review
+* prototype review
+* collection
+* delivery coordination
+
+Custom printing is quotation-based and may depend on quantity.
+
+---
+
+# 30. PACKAGING PRODUCTION COORDINATION
+
+Packaging coordination may include:
+
+1. Client logo and information preparation
+2. Print-ready artwork
+3. Manufacturer coordination
+4. Printing coordination
+5. Cutting coordination
+6. Folding coordination
+7. Finishing coordination
+8. Sample/prototype review
+9. Collection/delivery coordination
+
+Physical manufacturing may be completed through specialized production partners.
+
+---
+
+# 31. TARGET CUSTOMERS
+
+VIKM GROUP Ltd can serve:
+
+* individuals
+* homeowners
+* people building homes
+* property developers
+* real-estate companies
+* businesses
+* offices
+* hotels
+* restaurants
+* schools
+* churches
+* government institutions
+* organizations
+* interior designers
+* architects
+* commercial clients
+* startups
+* established businesses
+
+---
+
+# 32. CUSTOMER GEOGRAPHIC REACH
+
+The questionnaire identifies service areas including:
+
+* Kigali
+* other parts of Rwanda
+* East Africa
+* international
+
+The documented physical company location is Kimironko, Gasabo District, Kigali, Rwanda.
+
+---
+
+# 33. BRAND PERSONALITY
+
+Words selected or associated with the desired VIKM GROUP Ltd brand include:
+
+* professional
+* trustworthy
+* modern
+* premium
+* luxury
+* creative
+* reliable
+* affordable
+* innovative
+* elegant
+* strong
+* experienced
+* friendly
+* high-quality
+* custom
+
+The questionnaire specifically indicates a preference toward a professional and premium presentation.
+
+---
+
+# 34. WEBSITE VISUAL DIRECTION
+
+The preferred website direction includes:
+
+* modern
+* luxurious
+* minimal
+* elegant
+* professional
+* corporate
+* bold
+* creative
+* construction/industrial
+* warm
+* premium furniture/interior
+* modern African aesthetic
+* clean
+* architectural
+
+The response indicates preference for a combination of these directions, with emphasis on a professional and premium appearance.
+
+A reference mentioned in the questionnaire is Apple, particularly its clean, premium, and minimal presentation.
+
+---
+
+# 35. WEBSITE OBJECTIVES
+
+The desired website should help VIKM GROUP Ltd:
+
+* showcase construction projects
+* showcase furniture
+* showcase architecture and design work
+* attract new customers
+* generate quotation requests
+* build trust
+* build credibility
+* generate WhatsApp inquiries
+* present the company professionally
+* display services
+* potentially sell furniture/products online
+
+---
+
+# 36. WEBSITE CUSTOMER ACTIONS
+
+Visitors should potentially be able to:
+
+* call the company
+* send a WhatsApp message
+* request a quotation
+* book a consultation
+* view projects
+* request furniture design
+* request a construction estimate
+* upload project requirements
+* upload photos
+* visit the physical location
+* send an inquiry
+
+---
+
+# 37. QUOTATION REQUEST INFORMATION
+
+A customer requesting a quotation may be asked for:
+
+* name
+* phone number
+* WhatsApp number
+* email
+* project type
+* project location
+* project description
+* estimated budget
+* preferred start date
+* project size
+* drawings
+* photographs
+
+For architecture/construction projects, drawings, floor plans, measurements, or photographs may be particularly useful.
+
+For furniture projects, dimensions and photographs of the available space can help.
+
+For packaging projects, quantity, dimensions, product information, printing requirements, and packaging specifications can help.
+
+For software projects, the customer should describe the desired system, users, features, and workflow.
+
+---
+
+# 38. CUSTOMER PROJECT PROCESS
+
+VIKM GROUP Ltd describes its typical customer process as:
+
+STEP 01 — CONSULTATION
+
+The company discusses:
+
+* client's idea
+* requirements
+* space
+* preferences
+* quantity
+* budget
+* expected outcome
+
+STEP 02 — ASSESSMENT & PLANNING
+
+The company evaluates:
+
+* project requirements
+* appropriate approach
+* materials
+* design
+* resources needed
+
+STEP 03 — DESIGN / PROPOSAL
+
+Depending on the project, the company prepares:
+
+* architectural design
+* furniture concept
+* interior design
+* branding artwork
+* packaging design
+* technical solution
+
+STEP 04 — QUOTATION & APPROVAL
+
+The company presents:
+
+* scope
+* quotation
+* timeline
+* project requirements
+
+The customer reviews and approves the proposal.
+
+STEP 05 — EXECUTION / PRODUCTION
+
+The work is performed directly or coordinated with qualified specialists and production partners.
+
+STEP 06 — QUALITY CHECK
+
+The company reviews the work or finished product to ensure it meets agreed requirements.
+
+STEP 07 — DELIVERY & INSTALLATION
+
+The company delivers and, where applicable, installs or coordinates installation.
+
+STEP 08 — FOLLOW-UP
+
+The company may remain available for:
+
+* support
+* adjustments
+* maintenance
+* future project needs
+
+---
+
+# 39. WHAT MAKES VIKM GROUP DIFFERENT
+
+The company's stated differentiating characteristics include bringing multiple complementary services together.
+
+These include:
+
+* construction
+* architecture
+* furniture
+* interior design
+* home equipment
+* fittings
+* branding
+* printing
+* packaging
+* technology solutions
+
+The company focuses on customized solutions based on:
+
+* client needs
+* available space
+* vision
+* budget
+
+Rather than providing only one isolated part of a project, VIKM GROUP Ltd can coordinate different stages from:
+
+CONCEPT → DESIGN → PRODUCTION → INSTALLATION → FINAL DELIVERY
+
+where applicable.
+
+The company also emphasizes:
+
+* clear communication
+* practical design
+* attention to detail
+* professional presentation
+* reliable coordination
+* specialized partner coordination where required
+
+---
+
+# 40. PROJECT PORTFOLIO
+
+The website is intended to showcase strong and visually impressive projects across:
+
+* construction
+* architecture
+* furniture
+* interior design
+* complete home solutions
+* technology
+* digital projects
+
+Priority portfolio categories include:
+
+1. Residential building projects
+2. Construction projects
+3. Modern house designs
+4. Architectural designs
+5. Complete interior design projects
+6. Interior finishing projects
+7. Custom kitchens
+8. Wardrobes
+9. Fitted furniture
+10. Complete furniture projects
+11. Home-equipment projects
+12. Commercial construction
+13. Office construction
+14. Commercial interior projects
+15. Renovation projects
+16. Transformation projects
+17. 2D architectural designs
+18. 3D architectural designs
+19. 3D visualizations
+20. Websites
+21. Business systems
+22. Customized software solutions
+
+Portfolio content should prioritize genuine projects and available visual evidence.
+
+---
+
+# 41. BEFORE-AND-AFTER PROJECTS
+
+The website questionnaire indicates interest in showcasing:
+
+* before-and-after transformations
+* finished spaces
+* 3D designs
+* construction progress
+* custom furniture
+* completed installations
+
+The chatbot should not claim that a specific before-and-after project exists unless project data has actually been added.
+
+---
+
+# 42. TECHNOLOGY PORTFOLIO
+
+The company describes completed or developing digital capabilities including:
+
+* customized business systems
+* websites
+* web applications
+* mobile applications
+* digital document solutions
+* digital seals
+* digital signatures
+* software solutions
+
+The company is also developing a broader portfolio covering:
+
+* construction
+* architecture
+* furniture
+* interior design
+* home equipment
+
+Portfolio claims should only be made using verified project information.
+
+---
+
+# 43. CUSTOMER TESTIMONIALS
+
+The questionnaire indicates that genuine customer testimonials may be collected and displayed.
+
+If testimonials are not formally collected, suitable customer feedback may be requested and approved before publishing.
+
+AI RULE:
+
+Do NOT invent testimonials.
+
+Do NOT create fake customer names.
+
+Do NOT claim that a customer said something unless the actual approved testimonial has been added to the knowledge base.
+
+---
+
+# 44. CERTIFICATIONS, LICENSES AND AWARDS
+
+The company documentation states that certifications, licenses, awards, and professional memberships should only be displayed when officially available and verified.
+
+AI RULE:
+
+Never invent or assume:
+
+* certification
+* license
+* award
+* professional membership
+* accreditation
+
+If asked, the chatbot should state that such information should be confirmed from officially provided documentation unless verified data has been added.
+
+---
+
+# 45. PARTNERSHIPS AND SPECIALIST COORDINATION
+
+VIKM GROUP Ltd works with specialized professionals and trusted production partners when a project requires services or manufacturing outside the company's direct scope.
+
+This may include:
+
+* manufacturing
+* printing
+* packaging production
+* specialist construction work
+* installation
+* other specialized services
+
+The chatbot should describe this as coordination with specialized professionals or trusted production partners rather than claiming that every service is directly manufactured or performed internally.
+
+---
+
+# 46. SOCIAL MEDIA
+
+Official social-media links are not yet included in the provided company knowledge.
+
+AI RULE:
+
+Do not invent social-media accounts or URLs.
+
+If asked for social media, explain that official business social-media links should be confirmed before being provided.
+
+---
+
+# 47. PRICE DATABASE
+
+## SOFTWARE
+
+Business / Informational Website = 150,000 RWF+
+Professional Website + Admin Features = 250,000 RWF+
+Website Redesign / Professional Upgrade = 80,000 RWF+
+Website Fixes & Troubleshooting = 30,000 RWF+
+Mobile Application Development = 300,000 RWF+
+Custom Web Application / Business System = 300,000 RWF+
+Database Design / Integration = 80,000 RWF+
+API / System Integration = 80,000 RWF+
+Digital Seal / Digital Stamp = 25,000 RWF+
+Digital Signature / Document Workflow = 50,000 RWF+
+Software Maintenance & Updates = 30,000 RWF+
+UI/UX & Responsive Design = 50,000 RWF+
+
+## ARCHITECTURE
+
+House / Building Concept Design = 100,000 RWF+
+2D Floor Plan = 70,000 RWF+
+3D ArchiCAD Model = 150,000 RWF+
+3D Exterior / Interior Visualization = 100,000 RWF+
+Architectural Modification / Redesign = 70,000 RWF+
+
+## BRANDING
+
+Logo Design / Redesign = 30,000 RWF+
+Business Card Design = 15,000 RWF+
+Flyer / Poster Design = 15,000 RWF+
+Label / Sticker Design = 15,000 RWF+
+Digital Seal / Stamp Design = 25,000 RWF+
+Branded Paper Bag / Packaging Design = 25,000 RWF+
+Custom Printing Coordination = Quotation based on quantity
+Custom Bread Bag Production = Quotation based on size, quantity and printing
+
+## SPECIAL PACKAGING QUOTATION
+
+Medium Bread Bag = 90,000 RWF/carton including logo/printing
+Big Bread Bag = 93,000 RWF/carton including logo/printing
+1 bundle = 1,000 pieces
+
+IMPORTANT:
+The bread-bag prices are associated with the documented Favorie Bakery quotation and should not be generalized as universal prices.
+
+---
+
+# 48. PRICE RESPONSE LOGIC
+
+When a customer asks:
+
+"How much is a website?"
+
+Answer with the relevant starting price:
+
+Business / informational website:
+From 150,000 RWF.
+
+Professional website with admin features:
+From 250,000 RWF.
+
+Then explain that the final price depends on scope and features.
+
+When a customer asks:
+
+"How much is a mobile app?"
+
+Answer:
+
+Mobile application development starts from 300,000 RWF, with final pricing depending on the application's features and complexity.
+
+When a customer asks:
+
+"How much is a logo?"
+
+Answer:
+
+Logo design or redesign starts from 30,000 RWF.
+
+When a customer asks:
+
+"How much is a floor plan?"
+
+Answer:
+
+A 2D floor plan starts from 70,000 RWF.
+
+When a customer asks:
+
+"How much is a 3D house design?"
+
+Clarify which service they mean:
+
+* 3D ArchiCAD model: from 150,000 RWF
+* 3D exterior/interior visualization: from 100,000 RWF
+
+Final pricing depends on the project scope.
+
+---
+
+# 49. INTENT CLASSIFICATION FOR CHATBOT
+
+If the customer asks about:
+
+"house", "building", "construction", "build", "contractor"
+→ CONSTRUCTION
+
+"floor plan", "2D plan", "architecture", "ArchiCAD", "3D house"
+→ ARCHITECTURE
+
+"interior", "room design", "finishing", "interior visualization"
+→ INTERIOR DESIGN
+
+"kitchen", "cabinet", "fitted kitchen"
+→ KITCHEN / FURNITURE
+
+"wardrobe", "closet", "storage"
+→ STORAGE / FURNITURE
+
+"sofa", "bed", "desk", "table", "chair", "TV unit"
+→ FURNITURE
+
+"renovation", "remodel", "extension"
+→ RENOVATION
+
+"logo", "brand", "business card", "flyer", "poster"
+→ BRANDING
+
+"bag", "bread bag", "packaging", "label", "sticker"
+→ PACKAGING
+
+"website", "web app", "mobile app", "software", "system"
+→ SOFTWARE / DIGITAL
+
+"database", "API", "integration"
+→ TECHNICAL DIGITAL SERVICES
+
+"stamp", "digital seal", "signature", "document workflow"
+→ DIGITAL DOCUMENT SERVICES
+
+"price", "cost", "how much"
+→ PRICING INTENT
+
+"quote", "quotation", "estimate"
+→ QUOTATION INTENT
+
+"contact", "phone", "call", "email", "WhatsApp"
+→ CONTACT INTENT
+
+---
+
+# 50. QUOTATION RESPONSE LOGIC
+
+If the customer wants a quote, the chatbot should collect relevant information.
+
+GENERAL:
+
+* Name
+* Phone/WhatsApp
+* Email
+* Project type
+* Location
+* Description
+* Budget
+* Preferred start date
+
+CONSTRUCTION:
+
+* Project type
+* Location
+* approximate size
+* drawings
+* photographs
+* construction stage
+* desired work
+* budget
+* start date
+
+ARCHITECTURE:
+
+* building type
+* dimensions
+* number of floors
+* location
+* floor plan if available
+* photographs if renovation
+* desired design
+* required deliverables
+
+FURNITURE:
+
+* item
+* dimensions
+* quantity
+* material
+* style
+* color
+* photographs
+* installation location
+
+PACKAGING:
+
+* product
+* bag/package type
+* size
+* quantity
+* artwork/logo
+* printing requirements
+* paper/material requirements
+* delivery requirements
+
+SOFTWARE:
+
+* business type
+* problem to solve
+* users
+* features
+* platform
+* database needs
+* integrations
+* authentication requirements
+* preferred timeline
+* budget
+
+---
+
+# 51. RESPONSE STYLE
+
+The chatbot should sound:
+
+* professional
+* trustworthy
+* friendly
+* clear
+* helpful
+* practical
+* concise when simple questions are asked
+* detailed when project planning is required
+
+The chatbot should avoid:
+
+* exaggerated claims
+* invented credentials
+* fake reviews
+* fake projects
+* guaranteed prices
+* guaranteed timelines
+* unsupported technical claims
+
+---
+
+# 52. CONTACT RESPONSE
+
+If someone asks:
+
+"How can I contact VIKM GROUP?"
+
+Respond with:
+
+VIKM GROUP Ltd is located in Kimironko, Gasabo District, Kigali, Rwanda.
+
+Phone:
+0794399892
+0783156702
+
+Email:
+[sandrinetech97@gmail.com](mailto:sandrinetech97@gmail.com)
+
+---
+
+# 53. COMPANY SUMMARY FOR SHORT RESPONSES
+
+VIKM GROUP Ltd is a Kigali-based multidisciplinary company providing construction, architecture, interior design, custom furniture, renovation, home solutions, branding, packaging, printing coordination, software development, and digital services.
+
+The company works with individuals, homeowners, developers, businesses, offices, hotels, restaurants, institutions, and other clients.
+
+The company focuses on customized solutions, professional execution, practical design, quality, and coordination from concept through delivery where applicable.
+
+---
+
+# 54. COMPANY SUMMARY FOR EMBEDDING
+
+VIKM GROUP Ltd Kigali Rwanda construction architecture furniture interior design renovation custom furniture kitchen cabinets wardrobes office furniture residential furniture commercial furniture 2D floor plans 3D ArchiCAD exterior visualization interior visualization building construction house construction apartments commercial buildings offices hotels restaurants schools churches branding logo design graphic design business cards flyers posters labels stickers packaging bread bags printing coordination software development websites web applications mobile applications business systems databases APIs digital seals digital signatures document workflows UI UX website maintenance.
+
+---
+
+# 55. SEMANTIC SERVICE MAP
+
+CONSTRUCTION:
+construction, building, house, home building, commercial building, renovation, extension, finishing, contractor, project execution
+
+ARCHITECTURE:
+architectural design, floor plan, 2D plan, 3D design, ArchiCAD, architectural visualization, building concept, redesign
+
+INTERIOR:
+interior design, interior finishing, room design, interior visualization, space improvement, furniture integration
+
+FURNITURE:
+custom furniture, made-to-measure furniture, sofa, bed, table, chair, wardrobe, kitchen cabinet, TV unit, shelf, office furniture
+
+KITCHEN:
+kitchen cabinets, fitted kitchen, kitchen design, storage, cabinetry
+
+WARDROBE:
+wardrobe, closet, storage, shelves, fitted storage
+
+BRANDING:
+logo, logo redesign, business card, flyer, poster, label, sticker, stamp
+
+PACKAGING:
+packaging, bread bag, paper bag, branded bag, labels, printing, packaging production
+
+SOFTWARE:
+website, web application, mobile app, business system, database, API, integration, maintenance
+
+DIGITAL DOCUMENTS:
+digital seal, digital stamp, digital signature, document workflow
+
+QUOTATION:
+quote, quotation, estimate, cost, price, budget, project estimate
+
+CONTACT:
+phone, WhatsApp, email, location, Kimironko, Kigali
+
+---
+
+# 56. SOURCE PRIORITY AND INFORMATION HANDLING
+
+SOURCE_A:
+VIKM GROUP Ltd Professional Company Profile & Service Price Guide.
+
+SOURCE_B:
+VIKM GROUP Ltd Website Discovery & Content Questionnaire.
+
+SOURCE_A contains the clearest documented starting-price information for:
+
+* software
+* architecture
+* branding
+* packaging
+* bread-bag quotation
+
+SOURCE_B contains broader company/service information for:
+
+* construction
+* furniture
+* interior design
+* renovation
+* home solutions
+* customer types
+* website objectives
+* customer process
+* brand positioning
+* portfolio direction
+* quotation requirements
+
+When a fact appears in only one source, retain it as source-specific information.
+
+When a price is available, use the documented price and clearly state that it is a starting price.
+
+When no price is available, do not invent one. Recommend requesting a quotation.
+
+---
+
+# 57. IMPORTANT KNOWLEDGE-BASE LIMITATIONS
+
+The provided documents do NOT establish:
+
+* a complete list of employees
+* names of architects
+* names of engineers
+* names of contractors
+* detailed construction rates
+* detailed furniture prices
+* complete material price lists
+* exact project timelines
+* payment methods
+* warranty policies
+* refund policies
+* official social-media URLs
+* verified certifications
+* verified licenses
+* awards
+* detailed customer testimonials
+* complete project portfolio records
+* complete product inventory
+
+The chatbot must therefore avoid presenting these as known facts unless additional verified knowledge is added.
+
+---
+
+# 58. IDEAL RAG CHUNKING STRUCTURE
+
+Recommended metadata for vector database ingestion:
+
+company = VIKM GROUP Ltd
+country = Rwanda
+city = Kigali
+location = Kimironko
+document_type = company_knowledge
+source_type = official_company_documents
+
+Suggested chunk IDs:
+
+VIKM-001 = Company identity
+VIKM-002 = Contact information
+VIKM-003 = Company overview
+VIKM-004 = Construction
+VIKM-005 = Construction project types
+VIKM-006 = Architecture
+VIKM-007 = Architecture pricing
+VIKM-008 = Interior design
+VIKM-009 = Exterior design
+VIKM-010 = Furniture
+VIKM-011 = Custom furniture
+VIKM-012 = Furniture products
+VIKM-013 = Furniture materials
+VIKM-014 = Kitchen cabinets
+VIKM-015 = Wardrobes and storage
+VIKM-016 = Office furniture
+VIKM-017 = Hotel and restaurant furniture
+VIKM-018 = Renovation
+VIKM-019 = Home solutions
+VIKM-020 = Software services
+VIKM-021 = Software pricing
+VIKM-022 = Website services
+VIKM-023 = Mobile applications
+VIKM-024 = Business systems
+VIKM-025 = Databases and APIs
+VIKM-026 = Digital documents
+VIKM-027 = Website maintenance
+VIKM-028 = Branding
+VIKM-029 = Branding pricing
+VIKM-030 = Packaging
+VIKM-031 = Bread bag quotation
+VIKM-032 = Printing coordination
+VIKM-033 = Packaging production
+VIKM-034 = Target customers
+VIKM-035 = Geographic service area
+VIKM-036 = Brand personality
+VIKM-037 = Website goals
+VIKM-038 = Customer actions
+VIKM-039 = Quotation requirements
+VIKM-040 = Customer workflow
+VIKM-041 = Company differentiation
+VIKM-042 = Portfolio
+VIKM-043 = Testimonials
+VIKM-044 = Certifications
+VIKM-045 = Partnerships
+VIKM-046 = Social media
+VIKM-047 = AI response rules
+VIKM-048 = Pricing rules
+VIKM-049 = Intent classification
+VIKM-050 = Knowledge limitations
+
+---
+
+# 59. RECOMMENDED VECTOR METADATA
+
+For each embedded chunk, use metadata similar to:
+
+{
+"company": "VIKM GROUP Ltd",
+"location": "Kimironko, Gasabo District, Kigali, Rwanda",
+"country": "Rwanda",
+"source": "VIKM GROUP Ltd official company documents",
+"document_type": "company_knowledge_base",
+"category": "service",
+"language": "English",
+"version": "master_knowledge_base",
+"verified": true
+}
+
+For pricing chunks additionally use:
+
+{
+"content_type": "pricing",
+"currency": "RWF",
+"price_type": "starting_price"
+}
+
+For the Favorie Bakery bread-bag quotation use:
+
+{
+"content_type": "quotation",
+"customer": "Favorie Bakery",
+"scope": "custom printed paper bread bags",
+"price_type": "specific_quotation"
+}
+
+---
+
+# 60. FINAL AI BEHAVIOR
+
+The chatbot represents VIKM GROUP Ltd.
+
+When answering:
+
+1. Search the knowledge base first.
+2. Identify the customer's intent.
+3. Retrieve the most relevant service information.
+4. Use documented facts only.
+5. Give starting prices only where documented.
+6. Explain that "From" means starting price.
+7. Ask for project details when a customized quotation is required.
+8. Provide the official contact information when appropriate.
+9. Never fabricate unavailable information.
+10. Never turn a specific quotation into a universal company price.
+11. Never create fake testimonials.
+12. Never invent certifications, licenses, awards, partnerships, projects, or social-media accounts.
+13. For uncertain requests, ask a focused clarification question.
+14. For complex projects, recommend a consultation/quotation.
+15. Keep responses professional, friendly, practical, and customer-oriented.
+
+END OF VIKM GROUP LTD MASTER AI KNOWLEDGE BASE
