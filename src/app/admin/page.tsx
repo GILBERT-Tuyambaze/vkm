@@ -53,7 +53,7 @@ import {
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [adminUser, setAdminUser] = useState<{ email: string } | null>(null)
+  const [adminUser, setAdminUser] = useState<{ email: string; name?: string; role?: string } | null>(null)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -90,12 +90,27 @@ export default function AdminPage() {
   const [isSendingClientEmail, setIsSendingClientEmail] = useState(false)
   const [clientEmailFeedback, setClientEmailFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
 
+  // Brevo Diagnostic Testing State
+  const [testEmailRecipient, setTestEmailRecipient] = useState('')
+  const [isTestingBrevo, setIsTestingBrevo] = useState(false)
+  const [testBrevoResult, setTestBrevoResult] = useState<{ type: 'success' | 'error'; message: string; details?: any } | null>(null)
+
   useEffect(() => {
+    // Check if an invitation token was provided in the URL query string
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const token = params.get('token') || params.get('invite')
+      if (token) {
+        window.location.href = `/admin/accept-invite${window.location.search}`
+        return
+      }
+    }
+
     // Check existing session
     const session = getAdminSession()
     if (session) {
       setIsAuthenticated(true)
-      setAdminUser({ email: session.email })
+      setAdminUser({ email: session.email, name: session.name, role: session.role })
       loadQuotes()
       loadInvitations()
     } else {
@@ -231,6 +246,38 @@ export default function AdminPage() {
       })
     } finally {
       setIsSendingClientEmail(false)
+    }
+  }
+
+  const handleTestBrevoConnection = async () => {
+    setIsTestingBrevo(true)
+    setTestBrevoResult(null)
+    try {
+      const res = await fetch('/api/admin/email/test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ targetEmail: testEmailRecipient || adminUser?.email || 'paperhubur@gmail.com' })
+      })
+      const data = await res.json()
+      if (res.ok && data.configured) {
+        setTestBrevoResult({
+          type: 'success',
+          message: data.notice,
+          details: data
+        })
+      } else {
+        setTestBrevoResult({
+          type: 'error',
+          message: data.error || 'Brevo test failed. Please check your Vercel Environment Variables.'
+        })
+      }
+    } catch (err: any) {
+      setTestBrevoResult({
+        type: 'error',
+        message: err.message || 'Error connecting to test route.'
+      })
+    } finally {
+      setIsTestingBrevo(false)
     }
   }
 
@@ -454,10 +501,13 @@ export default function AdminPage() {
           <div className="flex items-center gap-3 md:gap-4">
             {adminUser && (
               <div className="hidden items-center gap-2 text-xs text-[var(--stone)] md:flex">
-                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--ink)] text-xs text-white font-medium">
-                  {adminUser.email.charAt(0).toUpperCase()}
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--ink)] text-xs text-white font-medium shadow-xs">
+                  {(adminUser.name || adminUser.email).charAt(0).toUpperCase()}
                 </div>
-                <span className="font-mono text-[11px] text-[var(--graphite)]">{adminUser.email}</span>
+                <div className="text-left">
+                  <span className="font-semibold text-[var(--ink)] block leading-tight">{adminUser.name || adminUser.email}</span>
+                  <span className="text-[10px] text-[var(--timber-dk)] font-semibold uppercase tracking-wider">{adminUser.role || 'Admin'}</span>
+                </div>
               </div>
             )}
 
@@ -971,8 +1021,61 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg border border-[#2b2824] bg-[#1a1918] p-3 text-[11px] text-[#999]">
-                <p>⚡ <strong>Direct Brevo Integration:</strong> Emails sent from this center are signed with your sender address (<code className="text-[var(--timber)] font-mono">sandrinetech97@gmail.com</code>) and delivered straight to the recipient inbox.</p>
+              <div className="mt-6 rounded-xl border border-[#2b2824] bg-[#1a1918] p-4 text-[11px] text-[#b5afa6] space-y-3">
+                <div className="flex items-center justify-between border-b border-[#2b2824] pb-2">
+                  <div className="flex items-center gap-1.5 font-bold text-white uppercase tracking-wider text-[10px]">
+                    <Sparkles size={13} className="text-[var(--timber)]" />
+                    Brevo SMTP System Status
+                  </div>
+                  <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[9px] font-bold text-emerald-400">
+                    Live Active
+                  </span>
+                </div>
+                <p>
+                  Sender: <code className="text-[var(--timber)] font-mono">paperhubur@gmail.com</code> · VIKM GROUP Ltd
+                </p>
+
+                {/* Live Diagnostic Test Trigger */}
+                <div className="pt-2 border-t border-[#2b2824]">
+                  <label className="block text-[10px] uppercase font-semibold text-white/70 mb-1.5">
+                    Test Delivery from this Deployment:
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      value={testEmailRecipient}
+                      onChange={e => setTestEmailRecipient(e.target.value)}
+                      placeholder="test-inbox@gmail.com"
+                      className="flex-1 rounded-md border border-[#36322d] bg-[#141312] px-2.5 py-1 text-xs text-white placeholder:text-white/30 focus:border-[var(--timber)] focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      disabled={isTestingBrevo}
+                      onClick={handleTestBrevoConnection}
+                      className="inline-flex items-center gap-1.5 rounded-md bg-[var(--timber)] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#141312] hover:bg-[#d9ae58] transition-colors disabled:opacity-50"
+                    >
+                      {isTestingBrevo ? <Loader2 size={12} className="animate-spin" /> : <Send size={11} />}
+                      Test
+                    </button>
+                  </div>
+
+                  {testBrevoResult && (
+                    <div className={`mt-2.5 rounded-lg p-2.5 text-[10px] leading-relaxed ${
+                      testBrevoResult.type === 'success'
+                        ? 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-300'
+                        : 'border border-rose-500/30 bg-rose-500/10 text-rose-300'
+                    }`}>
+                      <p className="font-semibold">{testBrevoResult.message}</p>
+                      {testBrevoResult.details?.creditsRemaining !== undefined && (
+                        <p className="mt-1 text-white/60">Brevo Remaining Credits: <strong>{testBrevoResult.details.creditsRemaining}</strong></p>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="pt-2 border-t border-[#2b2824] text-[10px] text-white/50 leading-relaxed">
+                  💡 <strong>Vercel Production Notice:</strong> Make sure <code className="text-[var(--timber)]">BREVO_API_KEY</code> and <code className="text-[var(--timber)]">BREVO_SENDER_EMAIL</code> are configured in your Vercel Project Settings (Settings $\rightarrow$ Environment Variables) for production mail routing.
+                </div>
               </div>
             </div>
           </div>
@@ -988,7 +1091,7 @@ export default function AdminPage() {
                 <h2 className="text-xl font-bold text-[var(--ink)]">Invite Administrator</h2>
               </div>
               <p className="text-xs text-[var(--stone)] mb-6">
-                Send a personalized email invitation via Brevo to grant team members access to this dashboard.
+                Send a personalized email invitation via Brevo with a secure onboarding link to activate their account.
               </p>
 
               <form onSubmit={handleSendInvitation} className="space-y-4 text-xs">
@@ -1020,6 +1123,7 @@ export default function AdminPage() {
                   >
                     <option value="Admin">Administrator (Full Access)</option>
                     <option value="Project Manager">Project Manager (Quotes & Scoping)</option>
+                    <option value="Finance">Finance & Billing</option>
                     <option value="Viewer">Viewer (Read-only)</option>
                   </select>
                 </div>
@@ -1061,7 +1165,7 @@ export default function AdminPage() {
                       
                       {inviteFeedback.link && (
                         <div className="mt-3">
-                          <p className="text-[11px] font-semibold text-emerald-800 uppercase tracking-wider">Direct Access Link:</p>
+                          <p className="text-[11px] font-semibold text-emerald-800 uppercase tracking-wider">Direct Account Activation Link:</p>
                           <div className="mt-1 flex items-center gap-2">
                             <input
                               type="text"
@@ -1090,7 +1194,7 @@ export default function AdminPage() {
             <div className="rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-sm font-bold uppercase tracking-[.1em] text-[var(--ink)]">
-                  Active Team Invitations ({invitations.length})
+                  Team Members & Invitations ({invitations.length})
                 </h3>
                 <button onClick={loadInvitations} className="text-xs text-[var(--timber)] hover:underline flex items-center gap-1">
                   <RefreshCw size={12} /> Refresh
@@ -1104,32 +1208,52 @@ export default function AdminPage() {
                 </div>
               ) : (
                 <div className="divide-y divide-[var(--line)] rounded-xl border border-[var(--line)] bg-[#faf7f2]">
-                  {invitations.map(inv => (
-                    <div key={inv.id || inv.token} className="flex items-center justify-between p-3.5 text-xs">
-                      <div>
-                        <p className="font-semibold text-[var(--ink)]">{inv.email}</p>
-                        <p className="text-[11px] text-[var(--stone)]">Role: <strong>{inv.role}</strong> · Status: <span className="text-emerald-700">{inv.status || 'Pending'}</span></p>
+                  {invitations.map(inv => {
+                    const isAccepted = inv.status === 'Accepted'
+                    const inviteUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/admin/accept-invite?token=${inv.token}&email=${encodeURIComponent(inv.email)}`
+
+                    return (
+                      <div key={inv.id || inv.token} className="flex items-center justify-between p-3.5 text-xs">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-2">
+                            <p className="font-semibold text-[var(--ink)]">{inv.email}</p>
+                            {isAccepted ? (
+                              <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800">
+                                Activated {inv.full_name ? `(${inv.full_name})` : ''}
+                              </span>
+                            ) : (
+                              <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800">
+                                Pending Activation
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-[11px] text-[var(--stone)]">
+                            Role: <strong className="text-[var(--ink)]">{inv.role}</strong>
+                            {inv.phone ? ` · Phone: ${inv.phone}` : ''}
+                            {inv.invited_by ? ` · Invited by: ${inv.invited_by}` : ''}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => copyToClipboard(inviteUrl)}
+                            title="Copy onboarding link"
+                            className="rounded-md border border-[var(--line)] bg-white p-1.5 text-[var(--stone)] hover:text-[var(--ink)] shadow-2xs"
+                          >
+                            <Copy size={13} />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleDeleteInvite(inv.id || inv.token)}
+                            title="Revoke invitation"
+                            className="rounded-md border border-rose-200 bg-rose-50 p-1.5 text-rose-600 hover:bg-rose-100"
+                          >
+                            <Trash2 size={13} />
+                          </button>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={() => copyToClipboard(`${typeof window !== 'undefined' ? window.location.origin : ''}/admin?invite=${inv.token}&email=${encodeURIComponent(inv.email)}`)}
-                          title="Copy invitation link"
-                          className="rounded-md border border-[var(--line)] bg-white p-1.5 text-[var(--stone)] hover:text-[var(--ink)] shadow-2xs"
-                        >
-                          <Copy size={13} />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleDeleteInvite(inv.id || inv.token)}
-                          title="Revoke invitation"
-                          className="rounded-md border border-rose-200 bg-rose-50 p-1.5 text-rose-600 hover:bg-rose-100"
-                        >
-                          <Trash2 size={13} />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               )}
             </div>

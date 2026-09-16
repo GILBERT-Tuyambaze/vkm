@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
     })
 
     const brevoApiKey = process.env.BREVO_API_KEY?.trim()
-    const senderEmail = process.env.BREVO_SENDER_EMAIL?.trim() || 'sandrinetech97@gmail.com'
+    const senderEmail = process.env.BREVO_SENDER_EMAIL?.trim() || 'paperhubur@gmail.com'
     const senderName = process.env.BREVO_SENDER_NAME?.trim() || 'VIKM GROUP Ltd'
 
     if (!brevoApiKey || brevoApiKey.includes('placeholder')) {

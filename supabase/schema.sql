@@ -43,12 +43,15 @@ create policy "Allow update access for admin"
 create table if not exists public.admin_invitations (
   id uuid default gen_random_uuid() primary key,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-  email text not null,
+  email text not null unique,
   role text default 'Admin' not null,
   invited_by text not null,
   token text not null,
-  status text default 'Pending' check (status in ('Pending', 'Accepted', 'Expired')),
-  expires_at timestamp with time zone not null
+  status text default 'Pending' check (status in ('Pending', 'Accepted', 'Expired', 'Revoked')),
+  expires_at timestamp with time zone not null,
+  full_name text,
+  phone text,
+  accepted_at timestamp with time zone
 );
 
 alter table public.admin_invitations enable row level security;
@@ -60,8 +63,31 @@ create policy "Allow read/insert/update invitations"
   using (true)
   with check (true);
 
--- 4. Indexes for fast query and sorting
+-- 4. Create admin_profiles table for registered administrators
+create table if not exists public.admin_profiles (
+  id uuid default gen_random_uuid() primary key,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  email text not null unique,
+  full_name text not null,
+  phone text not null,
+  role text default 'Admin' not null,
+  status text default 'Active' check (status in ('Active', 'Suspended', 'Deactivated')),
+  last_login timestamp with time zone
+);
+
+alter table public.admin_profiles enable row level security;
+
+create policy "Allow all on admin_profiles"
+  on public.admin_profiles
+  for all
+  to anon, authenticated
+  using (true)
+  with check (true);
+
+-- 5. Indexes for fast query and sorting
 create index if not exists idx_quotes_created_at on public.quotes(created_at desc);
 create index if not exists idx_quotes_status on public.quotes(status);
 create index if not exists idx_quotes_type on public.quotes(type);
 create index if not exists idx_admin_invitations_email on public.admin_invitations(email);
+create index if not exists idx_admin_invitations_token on public.admin_invitations(token);
+create index if not exists idx_admin_profiles_email on public.admin_profiles(email);

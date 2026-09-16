@@ -1,9 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@supabase/supabase-js'
 
 interface InviteRequestBody {
   email: string
   role?: string
   invitedBy?: string
+}
+
+function getAppOrigin(req: NextRequest): string {
+  // 1. Explicit site URL if configured
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')
+  }
+  // 2. Vercel environment URL
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`
+  }
+  // 3. Forwarded headers (Vercel edge router)
+  const forwardedHost = req.headers.get('x-forwarded-host')
+  const forwardedProto = req.headers.get('x-forwarded-proto') || 'https'
+  if (forwardedHost) {
+    return `${forwardedProto}://${forwardedHost}`
+  }
+  // 4. Request headers
+  const origin = req.headers.get('origin')
+  if (origin && !origin.includes('localhost:3000')) {
+    return origin
+  }
+  const host = req.headers.get('host')
+  if (host && !host.includes('localhost:3000')) {
+    return `https://${host}`
+  }
+  return req.nextUrl.origin || 'https://vikm-group.vercel.app'
 }
 
 function generateVikmInvitationEmailHtml({
@@ -179,7 +210,7 @@ function generateVikmInvitationEmailHtml({
         <p>Hello,</p>
         <p>You have been formally invited by <strong>${invitedBy}</strong> to join the <strong>VIKM GROUP Ltd</strong> Administrator Portal as a designated <strong>${role}</strong>.</p>
         
-        <p>Through this dashboard, you will have access to incoming client quotation requests, architectural submissions, bespoke furniture orders, and project scoping management across Kigali and East Africa.</p>
+        <p>To complete your account setup and activate access, click the link below to configure your name, contact phone, and secure password.</p>
 
         <!-- Details Card -->
         <div class="highlight-card">
@@ -199,7 +230,7 @@ function generateVikmInvitationEmailHtml({
 
         <!-- Call to Action -->
         <div class="btn-container">
-          <a href="${inviteLink}" class="btn" target="_blank">Accept Invitation & Access Portal</a>
+          <a href="${inviteLink}" class="btn" target="_blank">Activate Account & Set Password</a>
         </div>
 
         <p style="font-size: 12px; color: #8C857B; text-align: center;">
@@ -238,8 +269,10 @@ export async function POST(req: NextRequest) {
     }
 
     const cleanEmail = email.trim().toLowerCase()
-    const token = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `invite_${Date.now()}`
-    
+    const token = typeof crypto !== 'undefined' && crypto.randomUUID
+      ? crypto.randomUUID().replace(/-/g, '')
+      : `vikm_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`
+
     // 7 days expiration
     const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
     const expiresDateStr = expiresAt.toLocaleDateString(undefined, {
@@ -248,11 +281,41 @@ export async function POST(req: NextRequest) {
       year: 'numeric'
     })
 
-    // Construct invitation URL
-    const origin = req.nextUrl.origin || 'http://localhost:3000'
-    const inviteLink = `${origin}/admin?invite=${token}&email=${encodeURIComponent(cleanEmail)}`
+    // Robust Origin Resolution (Production Vercel, Custom Domain, or Localhost)
+    const origin = getAppOrigin(req)
+    const inviteLink = `${origin}/admin/accept-invite?token=${token}&email=${encodeURIComponent(cleanEmail)}`
 
-    // Generate custom-branded HTML email
+    // 1. Direct Server-Side Database Persistence in Supabase
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    if (supabaseUrl && supabaseAnonKey && !supabaseUrl.includes('placeholder')) {
+      try {
+        const supabase = createClient(supabaseUrl, supabaseAnonKey)
+        // Clean up previous pending invites for this email
+        await supabase
+          .from('admin_invitations')
+          .delete()
+          .eq('email', cleanEmail)
+          .eq('status', 'Pending')
+
+        await supabase
+          .from('admin_invitations')
+          .insert([
+            {
+              email: cleanEmail,
+              role: role,
+              invited_by: invitedBy,
+              token: token,
+              status: 'Pending',
+              expires_at: expiresAt.toISOString()
+            }
+          ])
+      } catch (dbErr) {
+        console.warn('Server-side Supabase invitation insert notice:', dbErr)
+      }
+    }
+
+    // 2. Generate custom-branded HTML email
     const htmlContent = generateVikmInvitationEmailHtml({
       email: cleanEmail,
       role,
@@ -262,14 +325,14 @@ export async function POST(req: NextRequest) {
     })
 
     const brevoApiKey = process.env.BREVO_API_KEY?.trim()
-    const senderEmail = process.env.BREVO_SENDER_EMAIL?.trim() || 'sandrinetech97@gmail.com'
+    const senderEmail = process.env.BREVO_SENDER_EMAIL?.trim() || 'paperhubur@gmail.com'
     const senderName = process.env.BREVO_SENDER_NAME?.trim() || 'VIKM GROUP Ltd'
 
     let brevoSent = false
     let brevoMessageId: string | undefined
     let brevoError: string | undefined
 
-    // Send via Brevo API if key is configured
+    // 3. Send via Brevo API if key is configured
     if (brevoApiKey && !brevoApiKey.includes('placeholder') && !brevoApiKey.includes('your_brevo')) {
       try {
         const brevoRes = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -322,12 +385,11 @@ export async function POST(req: NextRequest) {
       notice: brevoSent 
         ? `Invitation email successfully dispatched to ${cleanEmail} via Brevo.`
         : (brevoError 
-            ? `Brevo API notice: ${brevoError}. The invitation record and link have been generated.`
-            : `Invitation link generated. (Configure BREVO_API_KEY in .env.local to dispatch live emails automatically).`)
+            ? `Brevo Notice: ${brevoError}. The invitation link has been generated.`
+            : `Invitation link generated. (Configure BREVO_API_KEY in Vercel / .env.local to dispatch live emails automatically).`)
     })
   } catch (err: any) {
     console.error('Invite handler error:', err)
     return NextResponse.json({ error: err.message || 'Failed to process invitation.' }, { status: 500 })
   }
 }
-

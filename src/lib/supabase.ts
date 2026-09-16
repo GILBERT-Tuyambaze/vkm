@@ -24,8 +24,22 @@ export interface AdminInvitation {
   role: string
   invited_by: string
   token: string
-  status: 'Pending' | 'Accepted' | 'Expired'
+  status: 'Pending' | 'Accepted' | 'Expired' | 'Revoked'
   expires_at: string
+  full_name?: string
+  phone?: string
+  accepted_at?: string
+}
+
+export interface AdminProfile {
+  id?: string
+  created_at?: string
+  email: string
+  full_name: string
+  phone: string
+  role: string
+  status?: 'Active' | 'Suspended' | 'Deactivated'
+  last_login?: string
 }
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
@@ -44,13 +58,18 @@ export const supabase = isSupabaseConfigured
 
 const LOCAL_STORAGE_KEY = 'vikm_quote_submissions_v1'
 const LOCAL_INVITES_KEY = 'vikm_admin_invites_v1'
+const LOCAL_PROFILES_KEY = 'vikm_admin_profiles_v1'
 const LOCAL_AUTH_KEY = 'vikm_admin_session_v1'
 
 // ==========================================
 // Admin Supabase Authentication
 // ==========================================
 
-export async function signInAdmin(email: string, password: string): Promise<{ success: boolean; user?: { email: string }; error?: string }> {
+export async function signInAdmin(email: string, password: string): Promise<{
+  success: boolean
+  user?: { email: string; name?: string; role?: string }
+  error?: string
+}> {
   const cleanEmail = email.trim().toLowerCase()
 
   // 1. Try Supabase Auth if configured
@@ -62,14 +81,23 @@ export async function signInAdmin(email: string, password: string): Promise<{ su
       })
 
       if (!error && data?.session && data?.user) {
+        const userMeta = data.user.user_metadata || {}
+        const profile = {
+          email: data.user.email || cleanEmail,
+          name: userMeta.full_name || '',
+          role: userMeta.role || 'Admin'
+        }
+
         if (typeof window !== 'undefined') {
           sessionStorage.setItem(LOCAL_AUTH_KEY, JSON.stringify({
-            email: data.user.email,
+            email: profile.email,
             token: data.session.access_token,
-            provider: 'supabase'
+            provider: 'supabase',
+            name: profile.name,
+            role: profile.role
           }))
         }
-        return { success: true, user: { email: data.user.email || cleanEmail } }
+        return { success: true, user: profile }
       }
     } catch (err: any) {
       console.warn('Supabase auth attempt notice:', err.message)
@@ -81,31 +109,45 @@ export async function signInAdmin(email: string, password: string): Promise<{ su
     (cleanEmail === 'admin@vikm.rw' || cleanEmail.includes('admin') || cleanEmail.includes('gilbert') || cleanEmail.includes('sandrine')) &&
     (password === 'vikm2026' || password === 'admin' || password === 'vikmgroup')
   ) {
+    const profile = {
+      email: cleanEmail,
+      name: cleanEmail.includes('gilbert') ? 'Gilbert Tuyambaze' : 'VIKM Administrator',
+      role: 'Super Admin'
+    }
     if (typeof window !== 'undefined') {
       sessionStorage.setItem(LOCAL_AUTH_KEY, JSON.stringify({
         email: cleanEmail,
         token: 'local-demo-token-vikm',
-        provider: 'local'
+        provider: 'local',
+        name: profile.name,
+        role: profile.role
       }))
     }
-    return { success: true, user: { email: cleanEmail } }
+    return { success: true, user: profile }
   }
 
   // Fallback for default master password
   if (password === 'vikm2026' || password === 'admin') {
+    const profile = {
+      email: cleanEmail,
+      name: cleanEmail.split('@')[0],
+      role: 'Admin'
+    }
     if (typeof window !== 'undefined') {
       sessionStorage.setItem(LOCAL_AUTH_KEY, JSON.stringify({
         email: cleanEmail,
         token: 'local-demo-token-vikm',
-        provider: 'local'
+        provider: 'local',
+        name: profile.name,
+        role: profile.role
       }))
     }
-    return { success: true, user: { email: cleanEmail } }
+    return { success: true, user: profile }
   }
 
-  return { 
-    success: false, 
-    error: 'Invalid email or password. (Demo access: admin@vikm.rw / vikm2026)' 
+  return {
+    success: false,
+    error: 'Invalid email or password.'
   }
 }
 
@@ -123,7 +165,7 @@ export async function signOutAdmin(): Promise<void> {
   }
 }
 
-export function getAdminSession(): { email: string; provider: string } | null {
+export function getAdminSession(): { email: string; name?: string; role?: string; provider: string } | null {
   if (typeof window === 'undefined') return null
   try {
     const raw = sessionStorage.getItem(LOCAL_AUTH_KEY)
@@ -270,7 +312,7 @@ export async function deleteQuoteSubmission(id: string): Promise<boolean> {
 }
 
 // ==========================================
-// Admin Invitations Management
+// Admin Invitations & Profiles Management
 // ==========================================
 
 function getLocalInvitations(): AdminInvitation[] {
@@ -313,6 +355,7 @@ export async function fetchAdminInvitations(): Promise<AdminInvitation[]> {
 export async function saveAdminInvitation(invite: AdminInvitation): Promise<void> {
   if (isSupabaseConfigured && supabase) {
     try {
+      await supabase.from('admin_invitations').delete().eq('email', invite.email).eq('status', 'Pending')
       await supabase.from('admin_invitations').insert([invite])
     } catch (err) {
       console.warn('Supabase invitation insert notice:', err)
@@ -331,5 +374,23 @@ export async function deleteAdminInvitation(id: string): Promise<void> {
     }
   }
   const current = getLocalInvitations()
-  saveLocalInvitations(current.filter(i => i.id !== id))
+  saveLocalInvitations(current.filter(i => i.id !== id && i.token !== id))
+}
+
+export async function fetchAdminProfiles(): Promise<AdminProfile[]> {
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const { data, error } = await supabase
+        .from('admin_profiles')
+        .select('*')
+        .order('created_at', { ascending: false })
+
+      if (!error && data) {
+        return data as AdminProfile[]
+      }
+    } catch (err) {
+      console.warn('Supabase profiles query notice:', err)
+    }
+  }
+  return []
 }
