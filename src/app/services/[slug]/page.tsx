@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h2 className="text-4xl">Ready to start a conversation?</h2>
             <Link
               href="/quote"
-              className="w-fit inline-flex items-center justify-center bg-white px-7 py-3.5 text-xs font-semibold uppercase tracking-[.14em] text-[var(--ink)] shadow-md transition-all duration-200 hover:bg-[var(--ink)] hover:text-white"
+              className="w-fit inline-flex items-center justify-center bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-[.14em] !text-[#171411] shadow-lg transition-all duration-200 hover:bg-[#171411] hover:!text-white"
             >
               Request a quotation
             </Link>

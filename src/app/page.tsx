@@ -274,12 +274,14 @@ export default function Home() {
                 <Link
                   href="/quote"
                   className="inline-flex items-center justify-center bg-white px-7 py-3.5 text-xs font-semibold uppercase tracking-[.14em] text-[var(--ink)] shadow-md transition-all duration-200 hover:bg-[var(--ink)] hover:text-white"
+                  className="inline-flex items-center justify-center bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-[.14em] !text-[#171411] shadow-lg transition-all duration-200 hover:bg-[#171411] hover:!text-white"
                 >
                   Request a quotation
                 </Link>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center border border-white px-7 py-3.5 text-xs font-semibold uppercase tracking-[.14em] text-white transition-all duration-200 hover:bg-white hover:text-[var(--timber-dk)]"
+                  className="inline-flex items-center justify-center border-2 border-white px-7 py-3.5 text-xs font-bold uppercase tracking-[.14em] !text-white transition-all duration-200 hover:bg-white hover:!text-[#824b2b]"
                 >
                   Contact us
                 </Link>

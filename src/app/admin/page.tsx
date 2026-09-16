@@ -1021,62 +1021,7 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border border-[#2b2824] bg-[#1a1918] p-4 text-[11px] text-[#b5afa6] space-y-3">
-                <div className="flex items-center justify-between border-b border-[#2b2824] pb-2">
-                  <div className="flex items-center gap-1.5 font-bold text-white uppercase tracking-wider text-[10px]">
-                    <Sparkles size={13} className="text-[var(--timber)]" />
-                    Brevo SMTP System Status
-                  </div>
-                  <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[9px] font-bold text-emerald-400">
-                    Live Active
-                  </span>
-                </div>
-                <p>
-                  Sender: <code className="text-[var(--timber)] font-mono">paperhubur@gmail.com</code> · VIKM GROUP Ltd
-                </p>
 
-                {/* Live Diagnostic Test Trigger */}
-                <div className="pt-2 border-t border-[#2b2824]">
-                  <label className="block text-[10px] uppercase font-semibold text-white/70 mb-1.5">
-                    Test Delivery from this Deployment:
-                  </label>
-                  <div className="flex gap-2">
-                    <input
-                      type="email"
-                      value={testEmailRecipient}
-                      onChange={e => setTestEmailRecipient(e.target.value)}
-                      placeholder="test-inbox@gmail.com"
-                      className="flex-1 rounded-md border border-[#36322d] bg-[#141312] px-2.5 py-1 text-xs text-white placeholder:text-white/30 focus:border-[var(--timber)] focus:outline-none"
-                    />
-                    <button
-                      type="button"
-                      disabled={isTestingBrevo}
-                      onClick={handleTestBrevoConnection}
-                      className="inline-flex items-center gap-1.5 rounded-md bg-[var(--timber)] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#141312] hover:bg-[#d9ae58] transition-colors disabled:opacity-50"
-                    >
-                      {isTestingBrevo ? <Loader2 size={12} className="animate-spin" /> : <Send size={11} />}
-                      Test
-                    </button>
-                  </div>
-
-                  {testBrevoResult && (
-                    <div className={`mt-2.5 rounded-lg p-2.5 text-[10px] leading-relaxed ${
-                      testBrevoResult.type === 'success'
-                        ? 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-300'
-                        : 'border border-rose-500/30 bg-rose-500/10 text-rose-300'
-                    }`}>
-                      <p className="font-semibold">{testBrevoResult.message}</p>
-                      {testBrevoResult.details?.creditsRemaining !== undefined && (
-                        <p className="mt-1 text-white/60">Brevo Remaining Credits: <strong>{testBrevoResult.details.creditsRemaining}</strong></p>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                <div className="pt-2 border-t border-[#2b2824] text-[10px] text-white/50 leading-relaxed">
-                  💡 <strong>Vercel Production Notice:</strong> Make sure <code className="text-[var(--timber)]">BREVO_API_KEY</code> and <code className="text-[var(--timber)]">BREVO_SENDER_EMAIL</code> are configured in your Vercel Project Settings (Settings $\rightarrow$ Environment Variables) for production mail routing.
-                </div>
-              </div>
             </div>
           </div>
         )}
